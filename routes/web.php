@@ -30,9 +30,9 @@ Route::post('/login','AuthController@postLogin')->name('login');
 Route::get('/signout', 'AuthController@signout');
 Route::get('/article/add', 'ArticleController@create');
 Route::post('/article/add', 'ArticleController@store')->name('addblog');
-Route::get('/profile', 'AuthController@viewProfile');
-Route::put('/profile', 'AuthController@putProfile')->name('updateprofile');
+Route::get('/profile', 'UserController@viewProfile');
+Route::put('/profile', 'UserController@putProfile')->name('updateprofile');
 Route::get('/article/myblog', 'ArticleController@showByUser');
-Route::get('/user', 'AuthController@manageUser');
-Route::get('/user/destroy/{id}', 'AuthController@deleteUser');
+Route::get('/user', 'UserController@manageUser');
+Route::get('/user/destroy/{id}', 'UserController@deleteUser');
 
