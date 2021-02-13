@@ -17,7 +17,9 @@ class CategorySeeder extends Seeder
             ['name' => 'Food'],
             ['name' => 'Tech'],
             ['name' => 'Diary'],
-            ['name' => 'Health']
+            ['name' => 'Mountain'],
+            ['name' => 'Beach'],
+            ['name' => 'Honeymoon'],
         ]);
     }
 }
