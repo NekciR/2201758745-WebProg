@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/welcome', function () {
     return view('welcome');
-});
+})->middleware('role:Auth');
 Route::get('/article','ArticleController@index');
 Route::get('/article/category/{categoryId}','ArticleController@index');
 Route::get('/article/show/{id}','ArticleController@show');

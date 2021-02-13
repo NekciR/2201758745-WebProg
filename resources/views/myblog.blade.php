@@ -10,6 +10,8 @@
 
     @if (Auth::user()->role == 'Admin')
         <h4>{{$user->name}}'s blog(s)</h4>
+    @else
+    <a role="button" href="/article/add" class="btn btn-outline-primary mb-3"><i class="fas fa-plus"></i> Add Blog</a>
     @endif
     <table class="table">
         <thead>

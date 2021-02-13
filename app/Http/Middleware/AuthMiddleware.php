@@ -21,11 +21,7 @@ class AuthMiddleware
         if(Auth::check()){
             $authRole = Auth::user()->role;
 
-            if($role == 'Admin' && $authRole == 'Admin'){
-                return $next($request);
-            }else if($role == 'User' && $authRole == 'User'){
-                return $next($request);
-            }else if($role == 'Auth'){
+            if($role == $authRole || $role = "Auth" ){
                 return $next($request);
             }
         }else if($role == 'Guest'){
