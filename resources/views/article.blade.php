@@ -20,42 +20,9 @@
         </div>
     @endforeach
 </div>
-
-
-
-
-
-
-
-
-
-    </div>
-{{-- <div class="row">
-    @foreach ($houses as $house)
-    <div class="col-sm-4 card-container">
-        <a href="/house/{{$house->id}}">
-            <div class="card mt-4 card-zoom">
-                <div class="image-container">
-                    <img class="card-img-top" src={{asset($house->image)}} alt="Card image cap">
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <p class="card-text text-overflow text-primary">{{$house->name}}</p>
-                    <label class="card-text price-text mt-auto">Rp. {{number_format($house->price,) }}</label>
-                </div>
-            </div>
-        </a>
-    </div>
-    @endforeach
-
-
-
-</div>
 <div class="d-flex justify-content-center mt-5 mb-5">
-    {{$houses->links()}}
-</div> --}}
-
-
-
+    {{$articles->links()}}
+</div>
 
 
 @endsection

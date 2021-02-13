@@ -18,10 +18,10 @@ class ArticleController extends Controller
     public function index($categoryId = null)
     {
         if($categoryId == null){
-            $articles = Article::getAllArticle();
+            $articles = Article::paginate(6);
         }else{
             $category = Category::find($categoryId);
-            $articles = $category->article->all();
+            $articles = $category->article->paginate(6);
         }
 
         return view('article',['articles' => $articles]);
@@ -76,10 +76,10 @@ class ArticleController extends Controller
 
     public function showByUser($id = null){
         if($id == null){
-            $articles = Article::where('user_id', Auth::id())->get();
+            $articles = Article::where('user_id', Auth::id())->paginate(10);
             $user = null;
         }else{
-            $articles = Article::where('user_id', $id)->get();
+            $articles = Article::where('user_id', $id)->paginate(10);
             $user = User::find($id);
         }
 

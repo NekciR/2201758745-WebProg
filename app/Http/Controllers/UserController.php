@@ -27,7 +27,7 @@ class UserController extends Controller
     }
 
     public function manageUser(){
-        $users = User::where('Role','User')->get();
+        $users = User::where('Role','User')->paginate(10);
         return view('manage_user',['users' => $users]);
     }
 
