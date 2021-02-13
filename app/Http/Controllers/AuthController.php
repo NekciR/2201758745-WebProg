@@ -25,13 +25,13 @@ class AuthController extends Controller
 
         if($request->input('loginAs') == 1){
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'User'],$request->has('remember'))){
-                return redirect('/');
+                return redirect('/welcome');
             }else{
                 return redirect()->back()->with('failed', 'User not found!');
             }
         }else{
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'],$request->has('remember'))){
-                return redirect('/');
+                return redirect('/welcome');
             }else{
                 return redirect()->back()->with('failed', 'Admin not found!');
             }
