@@ -113,7 +113,15 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        Article::destroy($id);
+        if(Auth::user()->role == 'Admin'){
+            Article::destroy($id);
+        }else{
+            $article = Article::find($id);
+            if($article->user_id == Auth::user()->id){
+                Article::destroy($id);
+            }
+        }
+
         return back()->with('success', 'Blog deleted!');
     }
 }
