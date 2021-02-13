@@ -21,7 +21,7 @@ class ArticleController extends Controller
             $articles = Article::paginate(6);
         }else{
             $category = Category::find($categoryId);
-            $articles = $category->article->paginate(6);
+            $articles = $category->article()->paginate(6);
         }
 
         return view('article',['articles' => $articles]);
@@ -49,7 +49,7 @@ class ArticleController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'story' => 'required|min:3|max:1000',
+            'story' => 'required|min:3',
             'image' => 'required|image|mimes:png,jpg|max:5120'
         ]);
 
