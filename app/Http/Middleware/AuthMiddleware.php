@@ -16,8 +16,6 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next, $role)
     {
-        // dd($role);
-        // dd(Auth::check());
         if(Auth::check()){
             $authRole = Auth::user()->role;
 
